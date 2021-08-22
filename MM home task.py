@@ -19,7 +19,7 @@ data_arg.add_argument("away_score" , type=int ,help="Enter away_score")
 data_arg.add_argument("tournament" , type=str ,help="Enter tournament")
 data_arg.add_argument("start_time" , type=str ,help="Enter start_time")
 
-class read_Delete(Resource):
+class read(Resource):
     
     def __init__(self):        
         self.data = pd.read_csv('result_played.csv') # reading csv file
@@ -29,7 +29,8 @@ class read_Delete(Resource):
         return jsonify({'Result': data_fount})
         
 
-api.add_resource(read_Delete, '/<int:hs>')
+api.add_resource(read, '/<int:hs>')
+#api.add_resource(read_Delete, '/<str:hs>')
 
 if __name__ == '__main__':
     app.run(debug=False, port=8081)
