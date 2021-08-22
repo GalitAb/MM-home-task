@@ -30,7 +30,7 @@ class read(Resource):
         
 
 api.add_resource(read, '/<int:hs>')
-#api.add_resource(read_Delete, '/<str:hs>')
+#api.add_resource(read, '/<str:home_team>')
 
 if __name__ == '__main__':
     app.run(debug=False, port=8081)
